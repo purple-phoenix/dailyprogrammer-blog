@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+{% if user.is_authenticated %}
+<h1>Write a New Post</h1>
+<a href="{% url 'make_post' %}"
+   class="btn btn-primary">
+    New Post
+</a>
+{%endif%}
+
+<h1>Posts</h1>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static post.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.description }}</p>
+                <a href="{% url 'post_detail' post.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

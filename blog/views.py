@@ -1,5 +1,7 @@
 from django.views import generic
 from .models import Post
+from django.shortcuts import render
+from django.http import HttpResponse
 
 
 class PostList(generic.ListView):
@@ -10,3 +12,21 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+
+def blog_index(request):
+
+    posts = Post.objects.all()
+    context = {
+        "posts": posts
+    }
+    return render(request, 'index.html', context)
+
+
+def post_detail(request, pk):
+    return HttpResponse()
+
+
+def make_post(request):
+
+    return HttpResponse()
