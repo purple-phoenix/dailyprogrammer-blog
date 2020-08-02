@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1>{{post.title}} By {{post.author}}  || {{post.get_status_str}}</h1>
-<img class="card-img-top" src="{{ post.picture }}">
+<h1 class="center">{{post.title}} By {{post.author}}  || {{post.get_status_str}}</h1>
+<img class="card-img-top center" src="{{ post.picture }}" class="center">
 <p class="center">
     {{post.content}}
 </p>
