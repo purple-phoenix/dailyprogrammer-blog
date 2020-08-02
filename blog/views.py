@@ -24,9 +24,16 @@ def blog_index(request):
 
 
 def post_detail(request, pk):
-    return HttpResponse()
+
+    post = Post.objects.get(pk=pk)
+
+    context = {
+        "post": post
+    }
+
+    return render(request, "post_detail.html", context)
 
 
 def make_post(request):
 
-    return HttpResponse()
+    return render(request, "make_post.html")
