@@ -2,9 +2,9 @@
 {% load static %}
 {% block page_content %}
 <h1 class="center">{{post.title}} By {{post.author}}  || {{post.get_status_str}}</h1>
-<img class="card-img-top center" src="{{ post.picture }}" class="center">
+<img class="card-img-top center" src="{{ MEDIA_URL }}{{ post.picture }}" class="center">
 <p class="center">
-    {{post.content}}
+    {{post.content |safe}}
 </p>
 
 {% endblock %}
