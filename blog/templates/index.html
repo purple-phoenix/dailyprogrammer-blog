@@ -15,7 +15,7 @@
     {% for post in posts %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{{ post.picture }}">
+            <img class="card-img-top" src="{{ MEDIA_URL }}{{ post.picture }}">
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="card-text">{{ post.description }}</p>

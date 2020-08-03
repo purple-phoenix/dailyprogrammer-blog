@@ -1,7 +1,9 @@
 from django.views import generic
 from .models import Post
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from blog.forms import PostForm
+import pdb
 
 
 class PostList(generic.ListView):
@@ -36,4 +38,16 @@ def post_detail(request, pk):
 
 def make_post(request):
 
-    return render(request, "make_post.html")
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+
+            form.save()
+            return HttpResponseRedirect("/")
+
+    else:
+        form = PostForm()
+        context = {
+            "form": form
+        }
+        return render(request, "make_post.html", context)

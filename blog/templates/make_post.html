@@ -4,6 +4,10 @@
 
 <h1>Make a Post</h1>
 
-
+<form action="/post/new/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
 
 {% endblock %}
