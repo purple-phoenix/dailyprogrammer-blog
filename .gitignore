@@ -105,3 +105,7 @@ venv.bak/
 
 #IntelliJ
 .idea
+
+#Django specific
+##Media root
+/blog/media
