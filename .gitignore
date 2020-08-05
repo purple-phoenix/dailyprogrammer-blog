@@ -108,4 +108,4 @@ venv.bak/
 
 #Django specific
 ##Media root
-/blog/media
+/media
