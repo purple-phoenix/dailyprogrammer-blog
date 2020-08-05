@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1 class="center">{{post.title}} By {{post.author}}  || {{post.get_status_str}}</h1>
-<img class="card-img-top center" src="{{ MEDIA_URL }}{{ post.picture }}" class="center">
-<p class="center">
+<h1 class="center">{{post.title}}</h1>
+<h2 class="center">{{post.author}}</h2>
+{% if post.get_status_str == "Draft" %}
+<h3 class="center">{{post.get_status_str}}</h3>
+{% endif %}
+
+<img class="card-img-top center" src="{{ MEDIA_URL }}{{ post.picture }}">
+<br/>
+<div class="center">
     {{post.content |safe}}
-</p>
+</div>
 
 {% endblock %}
