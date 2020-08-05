@@ -25,7 +25,7 @@ SECRET_KEY = 'l!)irsa6ne_c@^rsfc(axs0zsuzr*o+wbmo^6kx(eb7$#7+5e5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["blog.dailyprogrammer.org"]
 
 
 # Application definition
@@ -124,3 +124,5 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
