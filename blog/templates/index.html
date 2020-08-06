@@ -2,13 +2,6 @@
 {% load static %}
 {% block page_content %}
 
-{% if user.is_authenticated %}
-<h1 class="margin-space">Write a New Post</h1>
-<a href="{% url 'make_post' %}"
-   class="btn btn-primary">
-    New Post
-</a>
-{%endif%}
 <div class="margin_space"><h1 >Posts</h1></div>
 
 <div class="row margin_space">
