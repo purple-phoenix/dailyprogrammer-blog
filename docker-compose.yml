@@ -11,10 +11,10 @@
         - "8001:5432"
     web:
       build: .
-      command: python /code/manage.py runserver
+      command: sh /code/runserver.sh
       volumes:
         - .:/code
       ports:
-        - "64646:8000"
+        - "64646:64646"
       depends_on:
         - db

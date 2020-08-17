@@ -1,2 +1,3 @@
 #!/bin/bash
-exec python ./manage.py runserver 0.0.0.0:64646
+python ./manage.py migrate || true
+python ./manage.py runserver 0.0.0.0:64646
